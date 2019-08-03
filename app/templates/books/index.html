@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <h1>Book</h1>
+  <table class="table table-striped table-sm">
+    <thead>
+      <tr>
+        <th class="isbn">ISBN</th>
+        <th class="nome">Nome</th>
+        <th class="autor">Autor</th>
+        <th class="ano">Ano</th>
+        <th class="editora">Editora</th>
+      </tr>
+      <tbody>
+        {% for book in books %}
+          <tr>
+            <td>{{ book["ISBN"] }}</td>
+            <td>{{ book["NOME"] }}</td>
+            <td>{{ book["AUTOR"] }}</td>
+            <td>{{ book["ANO"] }}</td>
+            <td>{{ book["EDITORA"] }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </thead>
+  </table>
+
+  {{ pagination.links }}
+{% endblock %}
