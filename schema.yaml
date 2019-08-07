@@ -1,0 +1,15 @@
+Books:
+ - ID
+ - Nome
+ - Autor
+ - Editora
+ - Sinopse
+ - Ano de publicação
+ - ISBN
+ - Código de Barras
+
+Avaliation:
+ - Livro_ID
+ - Avaliador_ID # (fonte+id, ex: facebook/1234)
+ - Nota 
+ - Comentario
