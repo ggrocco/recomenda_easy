@@ -23,6 +23,8 @@ $ pip3 install -r requirements.txt
 
 $ python3 run.py
 ```
+# Book Crawler - Create JSON file 
+$ scrapy runspider tccScrapper.py -o livros.json
 
 Your app should now be running on [localhost:3000](http://localhost:3000/).
 
