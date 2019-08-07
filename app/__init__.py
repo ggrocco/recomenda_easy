@@ -1,14 +1,10 @@
 import os
-
-# import datetime
-# from bson.objectid import ObjectId
 from flask import Flask
 from flask_pymongo import PyMongo
 
 mongo = PyMongo()
 
 # internal
-# from app.config.database import MyDB as mongo
 from app.controllers.home_controller import mod as home
 from app.controllers.book_controller import mod as books
 
