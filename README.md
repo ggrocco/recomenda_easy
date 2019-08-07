@@ -1,5 +1,6 @@
 # Recomenda EASY
 
+![Infra Model](docs/infra_model.png)
 
 ## Rodando Localmente
 - Precisa de Python 3.7 [installed locally](http://install.python-guide.org).
@@ -28,7 +29,7 @@ Your app should now be running on [localhost:3000](http://localhost:3000/).
 
 ## Book Crawler
 ```sh
-# Create JSON file 
+# Create JSON file
 $ scrapy runspider tccScrapper.py -o livros.json
 ```
 
