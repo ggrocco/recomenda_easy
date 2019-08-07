@@ -23,12 +23,14 @@ $ pip3 install -r requirements.txt
 
 $ python3 run.py
 ```
+
+Your app should now be running on [localhost:3000](http://localhost:3000/).
+
 ## Book Crawler
-```
+```sh
 # Create JSON file 
 $ scrapy runspider tccScrapper.py -o livros.json
 ```
-Your app should now be running on [localhost:3000](http://localhost:3000/).
 
 ## Deploying to Heroku
 
