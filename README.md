@@ -1,5 +1,6 @@
 # Recomenda EASY
 
+
 ## Rodando Localmente
 - Precisa de Python 3.7 [installed locally](http://install.python-guide.org).
 - Banco de dados [MongoDb](https://docs.mongodb.com/manual/installation/).
@@ -14,16 +15,16 @@ $ cd recomenda_easy
 $ cp sample.env .env
 
 # Create a Python virtual environment
-$ python -m venv venv
+$ python3 -m venv venv
 $ source venv/bin/activate
 
 # Install dependecies
 $ pip3 install -r requirements.txt
 
-$ flask run
+$ python3 run.py
 ```
 
-Your app should now be running on [localhost:5000](http://localhost:5000/).
+Your app should now be running on [localhost:3000](http://localhost:3000/).
 
 ## Deploying to Heroku
 
