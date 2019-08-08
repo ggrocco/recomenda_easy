@@ -17,4 +17,3 @@ class BookController():
     pagination = Pagination(page=current_page, total=all_books.count(
     ), per_page=PAGA_SIZE, record_name='books')
     return render_template('books/index.html', books=all_books, pagination = pagination)
-
