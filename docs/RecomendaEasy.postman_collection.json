@@ -1,0 +1,30 @@
+{
+	"info": {
+		"_postman_id": "c5349c09-999e-4f65-b393-102fa0cd6581",
+		"name": "RecomendaEasy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get by ISBN",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/books/853250812X",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"books",
+						"853250812X"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
