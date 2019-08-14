@@ -16,5 +16,5 @@ pprint(db.list_collection_names())
 books = db['books']
 # pprint(books.find({}))
 
-for x in books.find({},{"ISBN"}):
+for x in books.find({},{"ISBN":1,"_id":0}):
   pprint(x) 
