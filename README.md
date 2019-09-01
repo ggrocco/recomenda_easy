@@ -16,8 +16,8 @@ $ cd recomenda_easy
 $ cp sample.env .env
 
 # Create a Python virtual environment
-$ python3 -m venv venv
-$ source venv/bin/activate
+$ python3 -m venv env
+$ source env/bin/activate
 
 # Install dependecies
 $ pip3 install -r requirements.txt

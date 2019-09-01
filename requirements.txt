@@ -1,6 +1,8 @@
 flask
 flask_pymongo
 flask-paginate
-pymongo
 gunicorn
+pylint
+pymongo
 python-dotenv
+scrapy
