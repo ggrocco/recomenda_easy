@@ -16,22 +16,31 @@ $ cd recomenda_easy
 $ cp sample.env .env
 
 # Create a Python virtual environment
-$ python3 -m venv env
+$ python -m venv env
 $ source env/bin/activate
 
 # Install dependecies
-$ pip3 install -r requirements.txt
+$ pip install -r requirements.txt
 
-$ python3 run.py
+$ python run.py
 ```
 
 Your app should now be running on [localhost:3000](http://localhost:3000/).
 
-## Book Crawler
+## Livros e comentarios Crawler
 ```sh
-# Create JSON file
-$ scrapy runspider tccScrapper.py -o livros.json
+# Criação dos arquivos JSON
+$ scrapy runspider tccScrapperBooks.py -o livros.json
+$ scrapy runspider tccScrapperComments.py -o comments.json
+
+# Transformação dos comentarios
+$ python transformationComments.py
+
+# Importa no banco de dados Mongo.
+$ mongoimport -h HOST -d DATABASE -c books -u USER -p PASSWORD --file livros.json --jsonArray
+$ mongoimport -h HOST -d DATABASE -c comments -u USER -p PASSWORD --file comments.json --jsonArray
 ```
+
 
 ## Deploying to Heroku
 
