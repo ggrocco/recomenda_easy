@@ -6,7 +6,6 @@ mod = Blueprint('books_api', __name__)
 class BookController():
   @mod.route('/<isbn>')
   def get(isbn):
-    book = mongo.db.books.find_one({"ISBN": isbn})
-    return jsonify(isbn=book['ISBN'],
-                   avg_rank=4)
+    book = mongo.db.books.find_one({"isbn": isbn})
+    return jsonify(isbn=book['isbn'], avg_rank=4)
 

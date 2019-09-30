@@ -1,3 +1,8 @@
 main > .container {
   padding-top: 65px;
 }
+
+.pagination li {
+    display: inline;
+    padding: 8px;
+}

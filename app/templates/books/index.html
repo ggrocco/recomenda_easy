@@ -7,18 +7,20 @@
       <tr>
         <th class="isbn">ISBN</th>
         <th class="nome">Nome</th>
-        <th class="autor">Autor</th>
+        <th class="autor">Autores</th>
         <th class="ano">Ano</th>
-        <th class="editora">Editora</th>
+        <th class="editora">Média avaliação</th>
+        <th class="editora">Total avaliações</th>
       </tr>
       <tbody>
         {% for book in books %}
           <tr>
-            <td>{{ book["ISBN"] }}</td>
-            <td>{{ book["NOME"] }}</td>
-            <td>{{ book["AUTOR"] }}</td>
-            <td>{{ book["ANO"] }}</td>
-            <td>{{ book["EDITORA"] }}</td>
+            <td>{{ book["isbn"] }}</td>
+            <td>{{ book["title"] }}</td>
+            <td>{{ book["authors"] }}</td>
+            <td>{{ book["original_publication_year"] }}</td>
+            <td>{{ book["ratings_count"] }}</td>
+            <td>{{ book["average_rating"] }}</td>
           </tr>
         {% endfor %}
       </tbody>
