@@ -6,6 +6,9 @@ mod = Blueprint('books_api', __name__)
 class BookController():
   @mod.route('/<isbn>')
   def get(isbn):
-    book = mongo.db.books.find_one({"isbn": isbn})
-    return jsonify(isbn=book['isbn'], avg_rank=4)
+    book = mongo.db.books.find_one({'$where': f"/{isbn}/.test(this.isbn)"})
+    if book is None:
+      return jsonify(error='book not found.'), 404
+
+    return jsonify(book=book), 200
 
