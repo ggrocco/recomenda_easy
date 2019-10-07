@@ -1,15 +1,17 @@
 import os
 import pandas as pd
 import numpy as np
+from dotenv import load_dotenv
 
 # graficos
 from plotly.offline import plot, iplot
 import plotly.graph_objs as go
 
+load_dotenv()
 
 # Faz a conexão com o banco.
 from pymongo import MongoClient
-uri = 'mongodb://heroku_l5cst43x:p73b72vp244qf874m5aple0jf1@ds131312.mlab.com:31312/heroku_l5cst43x'
+uri = os.environ.get('MONGODB_URI')
 client = MongoClient(uri)
 database = client.get_database()
 db = client['heroku_l5cst43x']
