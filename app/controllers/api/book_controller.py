@@ -16,8 +16,10 @@ class BookController():
 
   @mod.route('/<user_id>/recomendacao')
   def recomendacao(user_id):
-    recomendacoes = RecomendaEasy.recomenda(user_id)
-    return jsonify(recomendacoes=recomendacoes), 200
+    books = mongo.db.books.find(
+        {}, {'_id': 0, 'book_id': 1, 'isbn': 1, 'average_rating': 1, 'ratings_count': 1})
+    recomendacoes = RecomendaEasy.recomenda(books, user_id)
+    return jsonify(recomendacoes=recomendacoes.to_dict('records')), 200
 
   @mod.route('/processes_module', methods=['PUT'])
   def processes_module():

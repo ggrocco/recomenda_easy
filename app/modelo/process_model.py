@@ -29,8 +29,5 @@ class ProcessModel:
 
   @staticmethod
   def save(predictions, algo):
-    moment = datetime.now().strftime("%Y%m%d")
-    dump.dump(f'./app/modelo/dump_{moment}', predictions, algo)
-    dump.dump(f'./app/modelo/predictions_{moment}', predictions, None)
-    dump.dump(f'./app/modelo/algo_{moment}', None, algo)
+    dump.dump(f'./app/modelo/dump_svd', predictions, algo)
     print('Saved')

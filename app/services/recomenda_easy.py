@@ -5,25 +5,14 @@ from surprise import dump
 
 class RecomendaEasy:
   @staticmethod
-  def recomenda(user_id):
-    predictions, algo = RecomendaEasy.load_by('svd')
-    new_set = RecomendaEasy.conteudo_novo(user_id, predictions)
-    df = algo.test(new_set)
-    df.sort_values(by='err')[:10]
+  def recomenda(books, user_id):
+    _, svd = RecomendaEasy.load_dump()
+    books = pd.DataFrame(books)
+    books['est'] = books['book_id'].apply(lambda x: svd.predict(user_id, x).est)
+    books = books.sort_values('est', ascending=False)
+    return books.head(30)
 
   @staticmethod
-  def conteudo_novo(user_id, predictions):
-    dataset = RecomendaEasy.load_dataset(predictions)
-    iids = dataset['iid'].unique()
-    recomendados = dataset.loc[dataset['uid'] == user_id, 'iid']
-    diff = np.setdiff1d(iids, recomendados, True)
-    return [[user_id, iid, 4.] for iid in diff]
-
-  @staticmethod
-  def load_by(file):
-    predictions_path = os.path.join(os.path.dirname(__file__), f'../modelo/{file}_20190925')
+  def load_dump():
+    predictions_path = os.path.join(os.path.dirname(__file__), '../modelo/algo_svd')
     return dump.load(predictions_path)
-
-  @staticmethod
-  def load_dataset(predictions):
-    return pd.DataFrame(predictions, columns=['uid', 'iid', 'rui', 'est', 'details'])
